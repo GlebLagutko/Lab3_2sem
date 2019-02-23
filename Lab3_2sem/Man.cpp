@@ -8,6 +8,12 @@
 
 using namespace std;
 
+void TransformString(wstring& wstring)
+{
+	transform(wstring.begin()++, wstring.end(), wstring.begin()++, tolower);
+	wstring[0] = toupper(wstring[0]);
+}
+
 void Man::ShowData()
 {
 	wcout <<  L" " << name[0] << L". " << fatherName[0] << L". " << surname << endl;
@@ -16,11 +22,12 @@ void Man::ShowData()
 void Man::SetData()
 {
 	wcin >> surname;
-	surname[0] = toupper(surname[0]);
+	TransformString(surname);
 	wcin >> name;
-	name[0] = toupper(name[0]);
+	TransformString(name);
 	wcin >> fatherName;
-	fatherName[0] = toupper(fatherName[0]);
+	TransformString(fatherName);
+
 }
 
 wstring Man::GetSurname()
