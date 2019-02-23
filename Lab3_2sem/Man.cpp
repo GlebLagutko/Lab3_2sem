@@ -16,8 +16,11 @@ void Man::ShowData()
 void Man::SetData()
 {
 	wcin >> surname;
+	surname[0] = toupper(surname[0]);
 	wcin >> name;
+	name[0] = toupper(name[0]);
 	wcin >> fatherName;
+	fatherName[0] = toupper(fatherName[0]);
 }
 
 wstring Man::GetSurname()
